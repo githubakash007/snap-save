@@ -1,26 +1,20 @@
-// const fs = require('fs');
-// const path = require('path');
+
 const videoId = Symbol().toString();
-declare const navigator: any; 
-//declare const context: any; 
-export const getImage = () => {
+declare const navigator: any;
+
+ const getImage = (callback: (input:string) => void) => {
     let video = document.getElementById(videoId) as HTMLVideoElement;
     let canvas = document.createElement("canvas");
     let context = canvas.getContext('2d');
-    // canvasEle.setAttribute('id', canvasId);
-    if(context)
-    context.drawImage(video, 0, 0, 400, 300);
+    if (context)
+        context.drawImage(video, 0, 0, 400, 300);
 
     let im = canvas.toDataURL('image/png');
-    //const filepath = path.join(loc, "out.png");
-
     var base64Data = im.replace(/^data:image\/png;base64,/, "");
-    return base64Data;
-    // fs.writeFile(filepath, base64Data, 'base64', function (err) {
-    //     console.log(err);
-    // });
+    callback(im);
+
 }
-export const startVideo = () => {
+export const startVideo = (callback: (input:string) => void ) => {
 
     const dialogId = Symbol().toString();
     const btnId = Symbol().toString();
@@ -28,7 +22,7 @@ export const startVideo = () => {
     let btn = document.createElement('input');
     btn.type = "button";
     btn.value = "Take Photo";
-    btn.onclick = () => getImage;
+    btn.onclick = () => getImage(callback);
     btn.setAttribute('style', " margin:0.5rem;padding:1rem;background-color: green;");
     btn.setAttribute('id', btnId);
     dialog.setAttribute('id', dialogId);
@@ -53,7 +47,7 @@ export const startVideo = () => {
     navigator.getMedia({
         video: true,
         audio: false
-    }, function (stream:MediaStream | MediaSource | Blob | null) {
+    }, function (stream: MediaStream | MediaSource | Blob | null) {
         videoEle.srcObject = stream;
         videoEle.play();
     }, function () {
@@ -61,4 +55,3 @@ export const startVideo = () => {
     });
 };
 
-//exports { startVideo, getImage }
