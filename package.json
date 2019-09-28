@@ -1,0 +1,24 @@
+{
+  "name": "snap-save",
+  "version": "1.0.0",
+  "description": "To take snap  using your computer camera and save it on the hard-disk OR in the local or remote database.",
+  "main": "dist/index.js",
+  "types" : "dist/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build":"tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/githubakash007/snap-save.git"
+  },
+  "author": "Akash Agarwal <akash.software.1982@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/githubakash007/snap-save/issues"
+  },
+  "homepage": "https://github.com/githubakash007/snap-save#readme",
+  "engines": {
+    "node": ">=4.2.4"
+  }
+}
