@@ -1,9 +1,10 @@
 
-const videoId = Symbol().toString();
+const videoId = Symbol('video').toString();
 declare const navigator: any;
 
  const getImage = (callback: (input:string) => void) => {
     let video = document.getElementById(videoId) as HTMLVideoElement;
+    console.log(video);
     let canvas = document.createElement("canvas");
     let context = canvas.getContext('2d');
     if (context)
@@ -16,8 +17,8 @@ declare const navigator: any;
 }
 export const startVideo = (callback: (input:string) => void ) => {
 
-    const dialogId = Symbol().toString();
-    const btnId = Symbol().toString();
+    const dialogId = Symbol('dialog').toString();
+    const btnId = Symbol('btn').toString();
     let dialog = document.createElement('dialog');
     let btn = document.createElement('input');
     btn.type = "button";

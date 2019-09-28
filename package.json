@@ -1,12 +1,12 @@
 {
   "name": "snap-save",
-  "version": "1.0.1",
+  "version": "1.0.4",
   "description": "To take snap  using your computer camera and save it on the hard-disk OR in the local or remote database.",
   "main": "dist/index.js",
-  "types" : "dist/index.d.ts",
+  "types": "dist/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build":"tsc"
+    "build": "tsc"
   },
   "repository": {
     "type": "git",

@@ -1,2 +1,1 @@
-export declare const getImage: () => string;
-export declare const startVideo: () => void;
+export declare const startVideo: (callback: (input: string) => void) => void;

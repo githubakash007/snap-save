@@ -1,32 +1,25 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-// const fs = require('fs');
-// const path = require('path');
-const videoId = Symbol().toString();
-//declare const context: any; 
-exports.getImage = () => {
+const videoId = Symbol('video').toString();
+const getImage = (callback) => {
     let video = document.getElementById(videoId);
+    console.log(video);
     let canvas = document.createElement("canvas");
     let context = canvas.getContext('2d');
-    // canvasEle.setAttribute('id', canvasId);
     if (context)
         context.drawImage(video, 0, 0, 400, 300);
     let im = canvas.toDataURL('image/png');
-    //const filepath = path.join(loc, "out.png");
     var base64Data = im.replace(/^data:image\/png;base64,/, "");
-    return base64Data;
-    // fs.writeFile(filepath, base64Data, 'base64', function (err) {
-    //     console.log(err);
-    // });
+    callback(im);
 };
-exports.startVideo = () => {
-    const dialogId = Symbol().toString();
-    const btnId = Symbol().toString();
+exports.startVideo = (callback) => {
+    const dialogId = Symbol('dialog').toString();
+    const btnId = Symbol('btn').toString();
     let dialog = document.createElement('dialog');
     let btn = document.createElement('input');
     btn.type = "button";
     btn.value = "Take Photo";
-    btn.onclick = () => exports.getImage;
+    btn.onclick = () => getImage(callback);
     btn.setAttribute('style', " margin:0.5rem;padding:1rem;background-color: green;");
     btn.setAttribute('id', btnId);
     dialog.setAttribute('id', dialogId);
@@ -56,4 +49,3 @@ exports.startVideo = () => {
         //error
     });
 };
-//exports { startVideo, getImage }

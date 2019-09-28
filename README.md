@@ -9,3 +9,29 @@ bower install snap-save --save
 ```
 
  ## Usage
+ ### Javascript
+```javascript
+const snapSave = require('snap-save');
+ snapSave.startVideo((imageDataURI:string) => console.write(imageDataURI));
+```
+```sh
+Output should be the image DataURI when you clicked the image
+```
+### TypeScript
+```typescript
+import { startVideo } from 'snap-save';
+snapSave.startVideo((imageDataURI:string) => console.write(imageDataURI));
+```
+```sh
+Output should be the image DataURI when you clicked the image
+```
+### AMD
+```javascript
+define(function(require,exports,module){
+  var snapSave = require('snap-save');
+  snapSave.startVideo((imageDataURI:string) => console.write(imageDataURI));
+});
+```
+```sh
+Output should be the image DataURI when you clicked the image
+```
