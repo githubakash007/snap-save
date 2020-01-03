@@ -4,7 +4,6 @@ declare const navigator: any;
 
  const getImage = (callback: (input:string) => void) => {
     let video = document.getElementById(videoId) as HTMLVideoElement;
-    console.log(video);
     let canvas = document.createElement("canvas");
     let context = canvas.getContext('2d');
     if (context)
@@ -13,7 +12,6 @@ declare const navigator: any;
     let im = canvas.toDataURL('image/png');
     var base64Data = im.replace(/^data:image\/png;base64,/, "");
     callback(im);
-
 }
 export const startVideo = (callback: (input:string) => void ) => {
 

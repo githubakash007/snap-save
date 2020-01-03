@@ -1,7 +1,7 @@
 {
   "name": "snap-save",
   "version": "1.0.4",
-  "description": "To take snap  using your computer camera and save it on the hard-disk OR in the local or remote database.",
+  "description": "To take snap  using your computer camera and return the base64 encoded image URL.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
