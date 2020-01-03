@@ -1,6 +1,6 @@
 {
   "name": "snap-save",
-  "version": "1.0.4",
+  "version": "1.0.9",
   "description": "To take snap  using your computer camera and return the base64 encoded image URL.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
