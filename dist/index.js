@@ -3,7 +3,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const videoId = Symbol('video').toString();
 const getImage = (callback) => {
     let video = document.getElementById(videoId);
-    console.log(video);
     let canvas = document.createElement("canvas");
     let context = canvas.getContext('2d');
     if (context)

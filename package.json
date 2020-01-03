@@ -12,6 +12,7 @@
     "type": "git",
     "url": "git+https://github.com/githubakash007/snap-save.git"
   },
+  "keywords": ["snap","ES6 Module","javascript","base64 image"],
   "author": "Akash Agarwal <akash.software.1982@gmail.com>",
   "license": "MIT",
   "bugs": {
